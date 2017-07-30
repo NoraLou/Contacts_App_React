@@ -4,7 +4,6 @@ import React, { Component} from 'react'
 // {person.name}
 class ListContacts extends Component {
 	render(){ 
-		console.log("this.props" , this.props)
 		return (
 			<ol className='contact-list'>
 				{this.props.contacts.map(person =>
@@ -17,6 +16,9 @@ class ListContacts extends Component {
 				 			<p>{ person.name }</p>
 				 			<p>{ person.email }</p>
 				 		</div>
+				 		<button onClick={ ()=>this.props.onDeleteContact(person)} className="contact-remove">
+				 			Remove
+				 		</button>
 				 	</li>
 				 ))}
 			</ol>
